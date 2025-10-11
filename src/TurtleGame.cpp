@@ -2,6 +2,7 @@
 #include "data/GameData.h"
 #include "loader/LoadTasks.h"
 #include "magique/assets/AssetLoader.h"
+#include "magique/assets/FileImports.h"
 #include "magique/core/Core.h"
 #include "magique/ecs/ECS.h"
 #include "magique/ui/SceneManager.h"
@@ -9,10 +10,10 @@
 #include "raylib/raylib.h"
 #include "stages/StageTransition.h"
 #include "systems/SystemHandler.h"
+#include "ui/HighScoreUi.h"
 
 RenderTexture GAME_TEX;
 GameSystemHandler HANDLER;
-
 OverlaySystem OVERLAY;
 
 void TurtleGame::onStartup(magique::AssetLoader& loader)
@@ -30,11 +31,19 @@ void TurtleGame::onStartup(magique::AssetLoader& loader)
     GAME_TEX = LoadRenderTexture(T_CANVAS_X, T_CANVAS_Y);
 }
 
+void TurtleGame::onShutDown()
+{
+    std::string buff;
+    magique::ExportJSON(HighScoreUI::times, buff);
+    GetGameData().save.saveString(StorageID::HIGHSCORES, buff);
+    magique::SaveToDisk(GetGameData().save, "turtle_highscores.save");
+}
+
 void TurtleGame::onLoadingFinished()
 {
     auto player = magique::CreateEntity(CAMERA, 0, 0, MapID::Beach);
     magique::SetPlayerEntity(player);
-    magique::SetGameState(GameState::SCENE_3);
+    magique::SetGameState(GameState::MAIN_MENU);
 }
 
 void TurtleGame::drawGame(GameState gameState, Camera2D& camera2D)

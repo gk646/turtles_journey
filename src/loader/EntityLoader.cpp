@@ -143,7 +143,7 @@ void EntityLoader::execute(magique::AssetContainer& res)
                                 auto& tex = magique::GiveComponent<TextureC>(e);
                                 tex.region = GetGameData().oil;
                                 magique::GiveCollisionRect(e, tex.region.width, tex.region.height);
-                                magique::GiveComponent<ItemC>(e, "Jellyfish");
+                                magique::GiveComponent<ItemC>(e, "Oil");
                             });
     magique::RegisterEntity(TRASH_FISHNET,
                             [](entt::entity e, EntityType type)
@@ -151,7 +151,7 @@ void EntityLoader::execute(magique::AssetContainer& res)
                                 auto& tex = magique::GiveComponent<TextureC>(e);
                                 tex.region = GetGameData().trashFishnet;
                                 magique::GiveCollisionRect(e, tex.region.width, tex.region.height);
-                                magique::GiveComponent<ItemC>(e, "Seaweed");
+                                magique::GiveComponent<ItemC>(e, "Fishnet full of Trash");
                             });
     magique::RegisterEntity(PLASTIC_BAG,
                             [](entt::entity e, EntityType type)
@@ -159,9 +159,26 @@ void EntityLoader::execute(magique::AssetContainer& res)
                                 auto& tex = magique::GiveComponent<TextureC>(e);
                                 tex.region = GetGameData().plasticBag;
                                 magique::GiveCollisionRect(e, tex.region.width, tex.region.height);
-                                magique::GiveComponent<ItemC>(e, "Plankton");
+                                magique::GiveComponent<ItemC>(e, "Plastic Bag");
                             });
 
+    magique::SetEntityScript(HEART, new HeartScript());
+    magique::RegisterEntity(HEART,
+                            [](entt::entity e, EntityType type)
+                            {
+                                auto& tex = magique::GiveComponent<TextureC>(e);
+                                tex.region = GetGameData().heart;
+                            });
+
+    magique::SetEntityScript(PARTNER_TURTLE, new PartnerTurtleScript());
+    magique::RegisterEntity(PARTNER_TURTLE,
+                            [](entt::entity e, EntityType type)
+                            {
+                                magique::GiveCollisionRect(e, 15, 8);
+                                auto& anim = magique::GiveComponent<magique::AnimationC>(
+                                    e, magique::AnimationC{GetGameData().swimTurtle, AnimationState::Idle});
+                                anim.flipX = true;
+                            });
 
     magique::SetGameStateChangeCallback(
         [](GameState old, GameState newState)

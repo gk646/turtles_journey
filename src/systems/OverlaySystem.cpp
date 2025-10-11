@@ -1,4 +1,5 @@
 #include "TurtleGame.h"
+#include "components/SwimTurtleC.h"
 #include "data/GameData.h"
 #include "fwd.h"
 #include "magique/core/Camera.h"
@@ -7,12 +8,22 @@
 #include "magique/core/Draw.h"
 #include "systems/SystemHandler.h"
 
+
 void OverlaySystem::draw()
 {
     auto state = magique::GetGameState();
     if (state == GameState::MAIN_MENU || state == GameState::HIGH_SCORE_MENU)
     {
         return;
+    }
+
+    for (auto e : magique::GetView<SwimTurtleC>())
+    {
+        auto& swim = magique::GetComponent<SwimTurtleC>(e);
+        if (swim.foundPartner)
+        {
+            return;
+        }
     }
     auto time = magique::GetTimerTime(0);
     int minutes = static_cast<int>(time / 60000000000);

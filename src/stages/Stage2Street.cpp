@@ -65,4 +65,5 @@ void Stage2Street::draw(TurtleGame& game, GameState gameState)
     {
         magique::DrawRegion(GetGameData().beach, {T_CANVAS_X / 2 - 639.0F * i, -T_CANVAS_Y / 2});
     }
+    magique::DrawParticles();
 }

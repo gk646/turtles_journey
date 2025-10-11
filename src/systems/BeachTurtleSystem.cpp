@@ -54,9 +54,8 @@ void BeachTurtleSystem::draw()
             magique::DrawCenteredPixelText(fnt, TextFormat("%c", prompt.key), drawPos.v(), 3, colors.text);
         }
         magique::DrawRegion(GetGameData().bornTurtle, pos.getPosition());
+        magique::DrawParticles();
     }
-
-    magique::DrawParticles();
 }
 
 void BeachTurtleSystem::update()

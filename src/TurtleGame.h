@@ -47,6 +47,8 @@ enum EntityType : uint16_t
     PLASTIC_BAG,
     OIL,
     TRASH_FISHNET,
+
+    HEART,
 };
 
 enum class MapID : uint8_t
@@ -62,6 +64,10 @@ enum class AnimationState : uint8_t
     Move,
 };
 
+enum class StorageID : int
+{
+    HIGHSCORES
+};
 
 inline AnimationState GetState(const char* name)
 {
@@ -92,7 +98,9 @@ inline AnimationState GetAnimState(magique::Point dir)
 
 struct TurtleGame final : magique::Game
 {
+    TurtleGame() : Game("A Turtles's Journey") {}
     void onStartup(magique::AssetLoader& loader) override;
+    void onShutDown() override;
     void onLoadingFinished() override;
     void drawGame(GameState gameState, Camera2D& camera2D) override;
     void drawUI(GameState gameState) override;

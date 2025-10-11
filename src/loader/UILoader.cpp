@@ -2,6 +2,7 @@
 #include "loader/LoadTasks.h"
 #include "magique/ui/SceneManager.h"
 #include "ui/BeachUI.h"
+#include "ui/HighScoreUi.h"
 #include "ui/MainMenu.h"
 #include "ui/OceanUi.h"
 #include "ui/StreetUi.h"
@@ -19,4 +20,7 @@ void UILoader::execute(magique::AssetContainer& res)
 
     auto& ocean = magique::GetSceneManager().getScene(GameState::SCENE_3);
     ocean.addObject(new OceanUI());
+
+    auto& highScore = magique::GetSceneManager().getScene(GameState::HIGH_SCORE_MENU);
+    highScore.addObject(new HighScoreUI());
 }

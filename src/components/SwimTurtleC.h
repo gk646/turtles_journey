@@ -6,7 +6,7 @@
 
 struct SwimTurtleC final
 {
-    static constexpr float MAX_SPEED = 40.0F / MAGIQUE_LOGIC_TICKS;
+    static constexpr float MAX_SPEED = 65.0F / MAGIQUE_LOGIC_TICKS;
     static constexpr int ITEM_TIMER = 150;
 
     magique::Point accel;
@@ -16,7 +16,9 @@ struct SwimTurtleC final
     bool badItem = false;
     bool goodItem = false;
     int itemCount = 0;
-};
 
+    bool foundPartner = false;
+    const char* lastItem = nullptr;
+};
 
 #endif // TURTLES_JOURNEY_SWIMTURTLEC_H

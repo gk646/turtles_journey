@@ -15,7 +15,7 @@ struct KeyPrompt final
 
 struct BeachTurtleC final
 {
-    static constexpr int DELAY = 45;
+    static constexpr int DELAY = 40;
     static constexpr int CORRECT_NEEDED = 15;
 
     int delayCount = 0;

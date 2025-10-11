@@ -29,6 +29,7 @@ void SwimTurtleScript::onTick(entt::entity self, bool updated)
     {
         swimT.goodItem = false;
         swimT.badItem = false;
+        swimT.lastItem = nullptr;
     }
 
     swimT.dir = {};
@@ -81,8 +82,16 @@ void SwimTurtleScript::onTick(entt::entity self, bool updated)
     auto& data = GetGameData();
     const auto width = (float)data.tilemap.getWidth() * data.tileset.getTileSize();
 
-    camPos.x = std::min(pos.x, width - T_CANVAS_X / 2.0F);
-    camPos.x = std::max(camPos.x, T_CANVAS_X / 2.0F);
+    if (swimT.foundPartner)
+    {
+        camPos.x = pos.x;
+        camPos.y = pos.y;
+    }
+    else
+    {
+        camPos.x = std::min(pos.x, width - T_CANVAS_X / 2.0F);
+        camPos.x = std::max(camPos.x, T_CANVAS_X / 2.0F);
+    }
 }
 
 void SwimTurtleScript::onStaticCollision(entt::entity self, magique::ColliderInfo collider,

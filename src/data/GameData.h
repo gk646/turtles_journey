@@ -5,6 +5,7 @@
 #include "magique/assets/types/TileSheet.h"
 #include "magique/core/Animations.h"
 #include "magique/core/Particles.h"
+#include "magique/persistence/GameSaveData.h"
 #include "raylib/raylib.h"
 #include "stages/Stage.h"
 
@@ -32,6 +33,7 @@ struct ColorData final
 
 struct GameData
 {
+    magique::GameSaveData save;
     Font font;
     ColorData colors;
 
@@ -73,6 +75,12 @@ struct GameData
 
     magique::TextureRegion plankton;
     magique::TextureRegion jellyfish;
+
+    magique::TextureRegion heart;
+
+    magique::ScreenEmitter waterParticles;
+    magique::ScreenEmitter yumParticles;
+
 };
 
 GameData& GetGameData();

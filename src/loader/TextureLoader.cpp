@@ -51,7 +51,7 @@ void TextureLoader::execute(magique::AssetContainer& res)
     data.ocean = ImportTexture(res.getAsset("ocean.png"));
 
     magique::LoadGlobalTileSet(data.tileset);
-    AddTileCollisions(MapID::Ocean, data.tilemap, {0, 1});
+    AddTileCollisions(MapID::Ocean, data.tilemap, {0, 1, 2});
 
     data.plankton = ImportTexture(res.getAsset("plankton.png"));
     data.jellyfish = ImportTexture(res.getAsset("jelly_fish.png"));
@@ -60,4 +60,5 @@ void TextureLoader::execute(magique::AssetContainer& res)
     data.trashFishnet = ImportTexture(res.getAsset("trash_fishnet.png"));
     data.oil = ImportTexture(res.getAsset("oil.png"));
 
+    data.heart = ImportTexture(res.getAsset("heart.png"));
 }

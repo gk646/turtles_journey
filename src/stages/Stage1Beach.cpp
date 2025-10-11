@@ -14,6 +14,7 @@ void Stage1Beach::onStart()
     pos.map = MapID::Beach;
     pos.x = 0;
     pos.y = 0;
+    magique::GetCamera().zoom = 1.0F;
 }
 
 void Stage1Beach::onEnd()

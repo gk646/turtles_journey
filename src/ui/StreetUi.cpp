@@ -25,8 +25,9 @@ void StreetUI::onDraw(const Rectangle& bounds)
 
         Rectangle healthRect = {pos.x, pos.y, totalWidth, (float)region.height};
 
-        DrawRectangleRec(healthRect, colors.outline);
-        magique::DrawPixelOutline(healthRect, colors.outline, colors.backActive, colors.textPassive);
+        continue;
+        // DrawRectangleRec(healthRect, colors.outline);
+        // magique::DrawPixelOutline(healthRect, colors.outline, colors.backActive, colors.textPassive);
 
         for (auto i = 0; i < WalkTurtleC::MAX_HEALTH; ++i)
         {

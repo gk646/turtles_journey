@@ -31,21 +31,13 @@ void CarScript::onDynamicCollision(entt::entity self, entt::entity other, magiqu
     const auto& car = magique::GetComponent<CarC>(self);
     auto& walkT = magique::GetComponent<WalkTurtleC>(other);
 
-    if (oPos.x >= pos.x)
-    {
-        oPos.x += 10;
-    }
-    else
-    {
-        oPos.x -= 10;
-    }
-
+    oPos.x += 20;
     if (walkT.hitDelay <= WalkTurtleC::HIT_DELAY)
     {
         return;
     }
 
-    magique::CreateScreenParticle(GetGameData().bloodParticles,oPos.getPosition(), 50);
+    magique::CreateScreenParticle(GetGameData().bloodParticles, oPos.getPosition(), 50);
 
     walkT.hitDelay = 0;
 

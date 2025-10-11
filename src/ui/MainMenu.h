@@ -12,8 +12,9 @@ struct MainMenu : magique::UIObject
 
     bool up = false;
     float transparency = 1.0F;
-    static constexpr float speed = 0.05F;
+    static constexpr float speed = 0.03F;
     PixelButton highScoreButton{100, 25, "Highscores"};
+    PixelButton magiqueButton{100, 25, "magique"};
 };
 
 #endif // TURTLES_JOURNEY_MAINMENU_H
