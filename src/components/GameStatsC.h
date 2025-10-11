@@ -1,0 +1,10 @@
+#ifndef TURTLES_JOURNEY_GAMESTATSC_H
+#define TURTLES_JOURNEY_GAMESTATSC_H
+
+
+struct GameStatsC final
+{
+};
+
+
+#endif // TURTLES_JOURNEY_GAMESTATSC_H

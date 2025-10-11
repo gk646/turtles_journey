@@ -1,0 +1,48 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "reef.tmj": {
+            "scale": 1.5,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 1397.3333333333333,
+                "y": 297.6666666666667
+            }
+        },
+        "reef.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1435,
+                "y": 160
+            }
+        }
+    },
+    "last.exportedFilePath": "C:/Users/Lukas/Documents/CodingProjects/C++/turtles_journey/res",
+    "last.imagePath": "C:/Users/Lukas/Documents/CodingProjects/C++/turtles_journey/res",
+    "lastUsedTilesetExportFilter": "JSON tileset files (*.tsj *.json)",
+    "map.height": 45,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 8,
+    "map.tileWidth": 8,
+    "map.width": 200,
+    "openFiles": [
+    ],
+    "project": "turtle.tiled-project",
+    "recentFiles": [
+        "reef.tmj",
+        "reef.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 8,
+        "width": 8
+    }
+}
