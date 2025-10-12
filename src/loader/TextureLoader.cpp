@@ -36,10 +36,10 @@ void TextureLoader::execute(magique::AssetContainer& res)
     data.turtleLife = ImportTexture(res.getAsset("turtle_icon.png"));
 
     data.walkTurtle = magique::ImportAseprite(res.getAsset("walking_turtle.ase"), GetState);
-    data.walkTurtle.offset = magique::Point{-6, -7};
+    data.walkTurtle.setOffset(magique::Point{-6, -7});
 
     data.swimTurtle = magique::ImportAseprite(res.getAsset("swim_turtle.ase"), GetState);
-    data.swimTurtle.offset = magique::Point{-9, -13};
+    data.swimTurtle.setOffset(magique::Point{-9, -13});
 
     data.street = ImportTexture(res.getAsset("street.png"));
 

@@ -4,7 +4,7 @@
 
 int main()
 {
-    magique::CompileAssetImage("../res");
+    // magique::CompileAssetImage("../res");
     TurtleGame game{};
     return game.run();
 }

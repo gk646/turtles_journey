@@ -1,6 +1,7 @@
 #ifndef TURTLES_JOURNEY_TURTLEGAME_H
 #define TURTLES_JOURNEY_TURTLEGAME_H
 
+#include <cstring>
 #include <vector>
 #include "magique/core/Game.h"
 #include "magique/util/Logging.h"

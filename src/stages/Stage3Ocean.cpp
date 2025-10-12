@@ -148,7 +148,7 @@ void Stage3Ocean::update(TurtleGame& game, GameState gameState)
         anim.setAnimationState(state);
         if (swim.dir.x != 0)
         {
-            anim.flipX = swim.veloc.x > 0;
+            anim.setFlipX(swim.veloc.x > 0);
         }
 
         if (swim.foundPartner)

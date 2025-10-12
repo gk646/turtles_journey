@@ -54,7 +54,7 @@ void Stage2Street::update(TurtleGame& game, GameState gameState)
         anim.setAnimationState(GetAnimState(walk.dir));
         if (walk.dir.x != 0 || walk.dir.y != 0)
         {
-            anim.flipX = walk.dir.x > 0;
+            anim.setFlipX(walk.dir.x > 0);
         }
     }
 }

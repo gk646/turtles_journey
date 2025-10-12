@@ -177,7 +177,7 @@ void EntityLoader::execute(magique::AssetContainer& res)
                                 magique::GiveCollisionRect(e, 15, 8);
                                 auto& anim = magique::GiveComponent<magique::AnimationC>(
                                     e, magique::AnimationC{GetGameData().swimTurtle, AnimationState::Idle});
-                                anim.flipX = true;
+                                anim.setFlipX(true);
                             });
 
     magique::SetGameStateChangeCallback(
