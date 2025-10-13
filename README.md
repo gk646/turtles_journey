@@ -34,3 +34,9 @@ It's divided into 3 stages:
 Your times are recorded in the high-score screen reached via the main menu.
 A save file is created in the game directory that saves all highscores.
 F11 toggles fullscreen.
+
+### How to build
+
+Clone both [_magique_](https://github.com/gk646/magique) and this into the same directory.
+Build `turtles_journey` like a normal CMake project (magique is referenced as ../magique).
+
