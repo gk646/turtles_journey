@@ -51,7 +51,7 @@ void BeachTurtleSystem::draw()
             magique::DrawRectFrameFilled(keyRect, colors.background, color);
             auto drawPos =
                 magique::Point{keyRect.x + keyRect.width / 2, keyRect.y + keyRect.height / 2 - (fnt.baseSize * 3) / 2};
-            magique::DrawCenteredPixelText(fnt, TextFormat("%c", prompt.key), drawPos.v(), 3, colors.text);
+            magique::DrawPixelTextCentered(fnt, TextFormat("%c", prompt.key), drawPos.v(), 3, colors.text);
         }
         magique::DrawRegion(GetGameData().bornTurtle, pos.getPosition());
         magique::DrawParticles();

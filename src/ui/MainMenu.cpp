@@ -10,7 +10,7 @@ MainMenu::MainMenu() : UIObject(200, 200, magique::Anchor::MID_CENTER)
 {
     auto func = [](const struct Rectangle& bounds, int mouseButton)
     {
-        if (magique::CheckMouseRect(bounds) && mouseButton == MOUSE_BUTTON_LEFT)
+        if (magique::CheckCollisionMouseRect(bounds) && mouseButton == MOUSE_BUTTON_LEFT)
         {
             magique::SetGameState(GameState::HIGH_SCORE_MENU);
         }
@@ -27,10 +27,10 @@ void MainMenu::onDraw(const Rectangle& bounds)
     const auto& colors = GetGameData().colors;
 
     auto txt = "A Turtle's Journey";
-    magique::DrawCenteredPixelText(fnt, txt, {T_CANVAS_X / 2, 50}, 3, colors.background);
+    magique::DrawPixelTextCentered(fnt, txt, {T_CANVAS_X / 2, 50}, 3, colors.background);
 
     txt = "Tap to start";
-    magique::DrawCenteredPixelText(fnt, txt, {T_CANVAS_X / 2, T_CANVAS_Y / 2}, 2,
+    magique::DrawPixelTextCentered(fnt, txt, {T_CANVAS_X / 2, T_CANVAS_Y / 2}, 2,
                                    ColorAlpha(colors.text, transparency));
 
     highScoreButton.setAnchor(magique::Anchor::BOTTOM_RIGHT, 10);
@@ -39,7 +39,7 @@ void MainMenu::onDraw(const Rectangle& bounds)
     magiqueButton.setAnchor(magique::Anchor::BOTTOM_LEFT, 10);
     magiqueButton.draw();
 
-    magique::DrawCenteredPixelText(fnt, "Created with magique", {T_CANVAS_X / 2, 300}, 2, colors.backHighlight);
+    magique::DrawPixelTextCentered(fnt, "Created with magique", {T_CANVAS_X / 2, 300}, 2, colors.backHighlight);
 }
 
 void MainMenu::onUpdate(const Rectangle& bounds, bool wasDrawn)
@@ -49,8 +49,8 @@ void MainMenu::onUpdate(const Rectangle& bounds, bool wasDrawn)
         return;
     }
 
-    if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && !magique::CheckMouseRect(highScoreButton.getBounds()) &&
-        !magique::CheckMouseRect(magiqueButton.getBounds()))
+    if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && !magique::CheckCollisionMouseRect(highScoreButton.getBounds()) &&
+        !magique::CheckCollisionMouseRect(magiqueButton.getBounds()))
     {
         magique::SetGameState(GameState::SCENE_1);
         // auto& stats = magique::GetComponent<GameStatsC>(magique::GetPlayerEntity());

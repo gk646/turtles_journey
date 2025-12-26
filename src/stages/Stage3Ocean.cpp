@@ -108,8 +108,8 @@ void Stage3Ocean::drawOnTop()
 
             EndMode2D();
             auto txt = TextFormat("%d:%02d:%04d", minutes, seconds, milliseconds);
-            magique::DrawRightBoundPixelText(fnt, txt, {T_CANVAS_X / 2, 150}, 2, colors.textPassive);
-            magique::DrawCenteredPixelText(fnt, "You found your partner!", {T_CANVAS_X / 2, 100}, 2, colors.background);
+            magique::DrawPixelTextRightBound(fnt, txt, {T_CANVAS_X / 2, 150}, 2, colors.textPassive);
+            magique::DrawPixelTextCentered(fnt, "You found your partner!", {T_CANVAS_X / 2, 100}, 2, colors.background);
             BeginMode2D(magique::GetCamera());
         }
 
@@ -125,7 +125,7 @@ void Stage3Ocean::drawOnTop()
                 txt = TextFormat("Yum yum, good %s", swim.lastItem);
             }
             EndMode2D();
-            magique::DrawCenteredPixelText(fnt, txt, {T_CANVAS_X / 2, 100}, 2, colors.background);
+            magique::DrawPixelTextCentered(fnt, txt, {T_CANVAS_X / 2, 100}, 2, colors.background);
             BeginMode2D(magique::GetCamera());
         }
     }

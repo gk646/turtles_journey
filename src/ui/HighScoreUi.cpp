@@ -22,13 +22,13 @@ void HighScoreUI::onDraw(const Rectangle& bounds)
         int milliseconds = static_cast<int>((time % 1000000000) / 1000000);
 
         auto txt = TextFormat("%d:%02d:%04d", minutes, seconds, milliseconds);
-        magique::DrawCenteredPixelText(fnt, txt, mid.v(), 2, colors.background);
+        magique::DrawPixelTextCentered(fnt, txt, mid.v(), 2, colors.background);
         mid.y += 13;
     }
 
     if (times.empty())
     {
-        magique::DrawCenteredPixelText(fnt, "No times", mid.v(), 2, colors.background);
+        magique::DrawPixelTextCentered(fnt, "No times", mid.v(), 2, colors.background);
     }
 }
 

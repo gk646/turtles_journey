@@ -31,7 +31,7 @@ void PixelButton::onDraw(const Rectangle& bounds)
     if (text != nullptr)
     {
         float drawY = bounds.y + ((bounds.height - (float)fnt.baseSize) / 2.0F);
-        magique::DrawCenteredPixelText(fnt, text, {bounds.x + bounds.width / 2.0F, drawY}, 1, colors.textHighlight);
+        magique::DrawPixelTextCentered(fnt, text, {bounds.x + bounds.width / 2.0F, drawY}, 1, colors.textHighlight);
     }
 }
 

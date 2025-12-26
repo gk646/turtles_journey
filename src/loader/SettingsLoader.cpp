@@ -17,7 +17,7 @@ void SettingsLoader::execute(magique::AssetContainer& res)
     //  magique::SetShowCompassOverlay(true);
 
     magique::SetUISourceResolution(T_CANVAS_X, T_CANVAS_Y);
-    magique::SetUITargetResolution(T_CANVAS_X, T_CANVAS_Y);
+    magique::SetUITargetResolution({T_CANVAS_X, T_CANVAS_Y});
 
     magique::SetCameraViewOffset(T_CANVAS_X / 2, T_CANVAS_Y / 2);
 

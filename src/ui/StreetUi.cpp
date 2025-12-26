@@ -12,7 +12,7 @@ void StreetUI::onDraw(const Rectangle& bounds)
     const auto& fnt = GetGameData().font;
     auto mid = magique::Point{T_CANVAS_X / 2, 20};
     const auto& colors = GetGameData().colors;
-    magique::DrawCenteredPixelText(fnt, txt, mid.v(), 2, colors.background);
+    magique::DrawPixelTextCentered(fnt, txt, mid.v(), 2, colors.background);
 
     float gap = 5;
     for (auto e : magique::GetView<WalkTurtleC>())

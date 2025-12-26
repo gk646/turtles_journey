@@ -34,7 +34,7 @@ void OverlaySystem::draw()
     const auto& fnt = GetGameData().font;
     const auto& colors = GetGameData().colors;
     EndMode2D();
-    magique::DrawRightBoundPixelText(fnt, txt, {T_CANVAS_X - 10, 10}, 2, colors.background);
+    magique::DrawPixelTextRightBound(fnt, txt, {T_CANVAS_X - 10, 10}, 2, colors.background);
     BeginMode2D(magique::GetCamera());
 }
 
